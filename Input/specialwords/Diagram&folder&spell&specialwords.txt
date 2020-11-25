@@ -1,0 +1,3 @@
+Zoomable
+Pannable
+Undoable

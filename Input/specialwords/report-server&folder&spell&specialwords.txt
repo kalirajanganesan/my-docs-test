@@ -1,0 +1,9 @@
+customendpoint
+programdata
+antivirus
+rdp
+Quickconnect
+azurewebsites
+adfs
+bak
+rsd

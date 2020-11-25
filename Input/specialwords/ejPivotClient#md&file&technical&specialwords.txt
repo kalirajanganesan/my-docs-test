@@ -1,0 +1,6 @@
+Olap
+synchart
+rangescrollbar
+pivotchart
+pivottreemap
+pivotclient

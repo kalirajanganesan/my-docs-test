@@ -1,0 +1,8 @@
+barchart
+checkmark
+filternone
+fullborders
+ie
+paperclip
+shoppingcart
+sortdirect

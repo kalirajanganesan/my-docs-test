@@ -1,0 +1,5 @@
+isdesktopdhortcut
+isstartmenushortcut
+portno
+servertype
+isdesktopshortcut

@@ -1,0 +1,14 @@
+localetext
+dropdownedit
+matchcase
+showfilterbarstatus
+getsort
+ejgrid
+windowonresize
+filterbeforeopen
+filtermodel
+filterchoicerequest
+filterchoicesearch
+filterafteropen
+onbefore
+deselecting

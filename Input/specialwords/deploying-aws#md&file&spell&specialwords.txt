@@ -1,0 +1,8 @@
+ami
+ecs
+Gi
+pem
+aws
+cp
+Boldbi
+ds

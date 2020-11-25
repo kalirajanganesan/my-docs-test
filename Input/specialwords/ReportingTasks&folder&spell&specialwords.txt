@@ -1,0 +1,16 @@
+metricname
+appid
+instanceid
+starttime
+jvmuptime
+jvmheap
+jvmnon
+jvmthread
+statesrunnable
+statesblocked
+statestimed
+statesterminated
+jvmdaemon
+jvmfile
+jvmgcruns
+jvmgctime

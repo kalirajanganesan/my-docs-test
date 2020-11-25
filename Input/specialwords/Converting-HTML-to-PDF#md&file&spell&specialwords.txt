@@ -1,0 +1,9 @@
+xvfb 
+libssl
+dev
+xcb
+xkb
+libxcb
+libxfixes
+libxrandr
+libxrender

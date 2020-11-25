@@ -1,0 +1,6 @@
+creditcard
+maxlength
+minlength
+rangelength
+numericedit
+Ime

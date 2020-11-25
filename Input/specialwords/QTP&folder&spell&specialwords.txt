@@ -1,0 +1,9 @@
+Xvalue
+Fromatted
+chk
+zoomposition
+yzoom
+xzoom
+areaindex
+
+

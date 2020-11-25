@@ -1,0 +1,24 @@
+odt
+SYNCFUSION
+mail merge
+Mail Merge
+.Net
+pdf
+Pdf
+Universal Windows
+jpeg
+Html
+html
+EPub
+MailMerge
+xlsx
+rtf
+xml
+smartArt
+Mail Merge
+dataBar
+svg
+autoShape
+btn
+DLL
+LocaleIDs

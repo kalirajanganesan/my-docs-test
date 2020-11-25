@@ -1,0 +1,17 @@
+xvfb 
+libssl
+dev
+xcb
+xkb
+libxcb
+libxfixes
+libxrandr
+libxrender
+Zugferd
+Layouter
+tessdata
+Tessdata
+libgdiplus
+syncfusionocrprocessor
+Tesseractbinaries
+Isblank

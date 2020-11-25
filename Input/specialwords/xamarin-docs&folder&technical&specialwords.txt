@@ -1,0 +1,7 @@
+Pdf
+MS Office
+uwp
+xaml
+c#
+nuget
+True type

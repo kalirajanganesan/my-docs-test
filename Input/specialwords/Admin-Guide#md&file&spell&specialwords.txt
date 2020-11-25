@@ -1,0 +1,10 @@
+memberof
+Uid
+uid
+inet
+sn
+keyhex
+proxying
+Proxied
+crt
+

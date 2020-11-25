@@ -1,0 +1,17 @@
+summaryrows
+groupsettings
+IsHideColumnIncude
+inlineform
+inlineformtemplate
+dialogtemplate
+externalform
+topright
+bottomleft
+externalformtemplate
+filterbar
+startswith
+IsHideColumnIncude
+onenter
+Incude
+groupDs
+Ds

@@ -1,0 +1,7 @@
+servername
+databasename
+iswindowsauthentication
+sslenabled
+isembed
+SaaS
+Saa

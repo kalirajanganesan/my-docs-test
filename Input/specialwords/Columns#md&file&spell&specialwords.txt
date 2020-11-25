@@ -1,0 +1,2 @@
+Calculationfor
+GridColumnSizer.ResetAutoCalculationforAllColumns

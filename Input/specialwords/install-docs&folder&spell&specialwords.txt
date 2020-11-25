@@ -1,0 +1,16 @@
+syncfusionessentialsourcecodeaddon
+compilemode
+frameworkversions
+removeall
+prebuilt
+Buildmanagerwindows
+buildmanagerwindows
+targetframework
+sourcefolderpath
+sourcefolder
+isfolderbackedup
+netstandard
+cancelled
+msiexec
+Auth
+netcoreapp

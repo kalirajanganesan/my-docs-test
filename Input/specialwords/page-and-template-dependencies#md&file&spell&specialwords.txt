@@ -1,0 +1,14 @@
+Borderless
+hdpi
+xhdpi
+xxhdpi
+xxxhdpi
+ipad
+Signup
+ecommerce
+Reviewtemplate
+Uswith
+Skia
+Viewmodel
+deliverytracking
+rendereres

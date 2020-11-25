@@ -1,0 +1,8 @@
+imagestream
+linkannotation
+pagecount
+pageheight
+pageindex
+pagesize
+pagewidth
+annotpagenum
