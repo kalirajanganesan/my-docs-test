@@ -222,7 +222,7 @@ if (!(Test-Path $CAKE_EXE)) {
 Write-Host "Configuring Nexus server..."
 try
 {
-Invoke-Expression "& `"$NUGET_EXE`"  sources add -Name NexusServer -Source `"$nugetserverurl`""
+Invoke-Expression "& `"$NUGET_EXE`"  sources add -Name NexusServer -Source `"http://nexus.syncfusion.com/repository/nuget-hosted/`""
 }
 catch{
 	throw new Exception("Nexus server configuration failed ");
