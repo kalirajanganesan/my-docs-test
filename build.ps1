@@ -218,6 +218,15 @@ if (!(Test-Path $CAKE_EXE)) {
     Throw "Could not find Cake.exe at $CAKE_EXE"
 }
 
+#Nexus Server Configuration
+Write-Host "Configuring Nexus server..."
+try
+{
+Invoke-Expression "& `"$NUGET_EXE`"  sources add -Name NexusServer -Source `"$nugetserverurl`""
+}
+catch{
+	throw new Exception("Nexus server configuration failed ");
+}
 
 
 # Build Cake arguments
