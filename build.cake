@@ -19,6 +19,7 @@ var isHtmlConversionError=0;
 var isGithubMoveStatus=0;
 var sourcefolder="";
 var repositoryName="";
+var documentationToolsStatus = true;
 
 //////////////////////////////////////////////////////////////////////
 // PREPARATION
@@ -64,7 +65,7 @@ Task("build")
 		
 	bool isWithoutError = true;
 
-        var errorfiles = GetFiles("../cireports/errorlogs/*.txt");
+        var errorfiles = GetFiles("../cireports/*.txt");
 		
 	if(!(errorfiles.Count() > 0))
         {
@@ -92,13 +93,17 @@ Task("build")
 		}
             }
 	  }
+	  else
+	  {
+	  	documentationToolsStatus = false;
+	  }
 	}
 	catch(Exception ex)
 	{        
 		buildStatus = false;
 		Information(ex);
 	}
-	if(isSpellingError==0 && isDocumentvalidationError==0 && isHtmlConversionError==0 && buildStatus) {    
+	if(isSpellingError==0 && isDocumentvalidationError==0 && isHtmlConversionError==0 && buildStatus && documentationToolsStatus ) {    
 		Information("Compilation successfull");
 		RunTarget("CopyFile");
 		if(targetBranch.Contains("master")&&sourcebranch.Contains("master"))
