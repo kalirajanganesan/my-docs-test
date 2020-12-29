@@ -65,7 +65,7 @@ Task("build")
 		
 	bool isWithoutError = true;
 
-        var errorfiles = GetFiles("../cireports/*.txt");
+        var errorfiles = GetFiles("../cireports/errorlogs/*.txt");
 		
 	if(!(errorfiles.Count() > 0))
         {
@@ -113,6 +113,7 @@ Task("build")
 		}
 	} 
 	else {   
+		Information("Job was failed due to changed documents have spelling error or document validation errors");
 		throw new Exception(String.Format("Please fix the project compilation failures"));  
 	}
 });
