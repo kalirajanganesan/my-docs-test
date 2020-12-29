@@ -65,7 +65,7 @@ Task("build")
 		
 	bool isWithoutError = true;
 
-        var errorfiles = GetFiles("../cireports/*.txt");
+        var errorfiles = GetFiles("../cireports/errorlogs/*.txt");
 		
 	if(!(errorfiles.Count() > 0))
         {
