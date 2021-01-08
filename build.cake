@@ -19,7 +19,7 @@ var isHtmlConversionError=0;
 var isGithubMoveStatus=0;
 var sourcefolder="";
 var repositoryName="";
-var documentationToolsStatus = true;
+var isJobSuccess = true;
 
 //////////////////////////////////////////////////////////////////////
 // PREPARATION
@@ -93,27 +93,22 @@ Task("build")
 		}
             }
 	  }
-	  else
-	  {
-	  	documentationToolsStatus = false;
-		Information("Document validation tool failed with exception");
-	  }
 	}
 	catch(Exception ex)
 	{        
 		buildStatus = false;
 		Information(ex);
 	}
-	if(isSpellingError==0 && isDocumentvalidationError==0 && isHtmlConversionError==0 && buildStatus && documentationToolsStatus ) {    
+	if(isSpellingError==0 && isDocumentvalidationError==0 && isHtmlConversionError==0 && buildStatus) {    
 		Information("Compilation successfull");
 		RunTarget("CopyFile");
-		if(targetBranch.Contains("master")&&sourcebranch.Contains("master"))
+		repositoryName =reposistoryPath.ToString().Split('/')[3].Split('@')[0];
+		if(targetBranch.Contains("master")&&sourcebranch.Contains("master")&& !repositoryName.ToLower().Contains("featuretour"))
 		{
 		  RunTarget("MoveGitlabToGithub");
 		}
 	} 
 	else {   
-		Information("Job was failed due to changed documents have spelling error or document validation errors");
 		throw new Exception(String.Format("Please fix the project compilation failures"));  
 	}
 });
@@ -151,6 +146,58 @@ Task("MoveGitlabToGithub")
 	catch(Exception ex)
 	{        
 		buildStatus = false;
+	}	
+		
+});
+
+
+Task("GithubErrorValidation")
+.Does(() =>
+{
+	try 
+	{
+            var errorfiles = GetFiles("../cireports/errorlogs/*.txt");
+		
+			if(!(errorfiles.Count() > 0))
+			{
+            var reportFiles = GetFiles(@"../cireports/**/*.(htm||html)");
+				
+				foreach (var reportFile in reportFiles)
+				{
+					string fileContent = System.IO.File.ReadAllText(reportFile.ToString());
+											
+					if ((fileContent.Contains("</td>")))
+					{
+						if (reportFile.ToString().Contains("spellcheckreport")) 		
+						{
+							if (fileContent.Contains("<td>Technical Error</td>") || fileContent.Contains("<td>Spell Error</td>"))
+							{
+								isJobSuccess = false;
+								break;
+							}
+							
+						}
+						else
+						{
+							isJobSuccess = false;
+							break;
+						}
+					}
+				}
+            
+			}
+			else
+			{
+				isJobSuccess = false;
+			}
+			if (isJobSuccess == false)
+			{
+				throw new Exception(String.Format("Please fix the documentation errors"));  
+			}
+	}
+	catch(Exception ex)
+	{        
+		throw new Exception(String.Format("Please fix the documentation errors"));
 	}	
 		
 });
