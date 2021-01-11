@@ -192,11 +192,13 @@ Task("GithubErrorValidation")
 			}
 			if (isJobSuccess == false)
 			{
+				Information("Job was failed due to changed documents have spelling error or document validation errors");
 				throw new Exception(String.Format("Please fix the documentation errors"));  
 			}
 	}
 	catch(Exception ex)
 	{        
+		Information("Job was failed due to changed documents have spelling error or document validation errors");
 		throw new Exception(String.Format("Please fix the documentation errors"));
 	}	
 		
