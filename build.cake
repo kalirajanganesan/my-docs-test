@@ -151,7 +151,7 @@ Task("MoveGitlabToGithub")
 });
 
 
-Task("GithubErrorValidation")
+Task("GitHubCIReportValidation")
 .Does(() =>
 {
 	try 
