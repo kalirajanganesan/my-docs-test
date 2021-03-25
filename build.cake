@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 #addin nuget:?package=Cake.FileHelpers
 #tool nuget:?package=Syncfusion.Spellcheck.CI
+using System.Text.RegularExpressions
 var target = Argument("target", "Default");
 var reposistoryPath=MakeAbsolute(Directory("../"));
 #tool nuget:?package=Syncfusion.Content.DocumentValidation.CI
