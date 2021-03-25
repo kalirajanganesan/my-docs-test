@@ -255,7 +255,13 @@ Task("PostComments")
             int imageNameErrorMatch = Regex.Matches(imageNameErrorString, "<tr><td style = 'border: 2px solid #416187;  color: #264c6b; padding:10px; border-collapse:collapse; border-bottom-width: 1px;'>").Count;
             Information("There are {0} Image Name Errors exists", imageNameErrorMatch);
 	
+	
+	// FilePath Validation
 
+            var filePathError = @"../cireports/FilePathValidation/FilePathValidation.html";
+            var filePathErrorString = FileReadText(filePathError);
+            int filePathErrorMatch = Regex.Matches(filePathErrorString, "<tr><td style = 'border: 2px solid #416187;  color: #264c6b;vertical-align:top; padding:10px; border-collapse:collapse; border-bottom-width: 1px;'>").Count;
+	    Information("There are {0} FilePath Validation Errors exists", filePathErrorMatch);
 });
 
 //////////////////////////////////////////////////////////////////////
