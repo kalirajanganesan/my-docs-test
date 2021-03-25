@@ -207,15 +207,31 @@ Task("GitHubCIReportValidation")
 Task("PostComments")
 .Does(() =>
 {
+	
+	// Techincal Errors
+
+            var technicalError = @"../cireports/spellcheck/spellcheckreport.htm";
+            var technicalErrorString = FileReadText(technicalError);
+            int technicalErrorMatch = Regex.Matches(technicalErrorString, "<td>Technical Error</td>").Count;
+            Information("There are {0} Technical Errors exists", technicalErrorMatch);
+
+
+        // Spelling Errors
+
+            var spellingError = @"../cireports/spellcheck/spellcheckreport.htm";
+            var spellingErrorString = FileReadText(spellingError);
+            int spellingErrorMatch = Regex.Matches(spellingErrorString, "<td>Spell Error</td>").Count;
+            Information("There are {0} Spelling Errors exists", spellingErrorMatch);
+	
+	
 	// Front matter Error	
 
 	    var frontMatterErrorReportPath = @"../cireports/FrontMatterValidation/FrontMatterValidation.html";
 	    var frontmatterErrorString = FileReadText(frontMatterErrorReportPath);
-            //String frontmatterErrorString = new File(@"../cireports/FrontMatterValidation/FrontMatterValidation.html").text;	
-	    //string frontmatterError = @"../cireports/FrontMatterValidation/FrontMatterValidation.html";
-            //string frontmatterErrorString = File.ReadAllText(frontmatterError);
             int frontmatterErrorMatch = Regex.Matches(frontmatterErrorString, "<tr><td style = 'border: 2px solid #416187;  color: #264c6b; padding:10px; border-collapse:collapse; border-bottom-width: 1px;'>").Count;
-            Information("There are {0} errors exists", frontmatterErrorMatch);
+            Information("There are {0} Front Matter Errors exists", frontmatterErrorMatch);
+	
+	
 
 });
 
