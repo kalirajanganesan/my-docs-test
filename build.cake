@@ -232,6 +232,29 @@ Task("PostComments")
             Information("There are {0} Front Matter Errors exists", frontmatterErrorMatch);
 	
 	
+	// Image Alt Text Error
+
+            var imageAltTextError = @"../cireports/ImageValidation/AltTextValidation.html";
+            var imageAltTextErrorString = FileReadText(imageAltTextError);
+            int imageAltTextErrorMatch = Regex.Matches(imageAltTextErrorString, "<tr><td style = 'border: 2px solid #416187;  color: #264c6b; padding:10px; border-collapse:collapse; border-bottom-width: 1px;'>").Count;
+            Information("There are {0} Image Alt Text Errors exists", imageAltTextErrorMatch);
+
+
+        // Image Size Error
+
+            var imageSizeError = @"../cireports/ImageValidation/ImageSizeValidation.html";
+            var imageSizeErrorString = FileReadText(imageSizeError);
+            int imageSizeErrorMatch = Regex.Matches(imageSizeErrorString, "<tr><td style = 'border: 2px solid #416187;  color: #264c6b; padding:10px; border-collapse:collapse; border-bottom-width: 1px;'>").Count;
+            Information("There are {0} Image Size Errors exists", imageSizeErrorMatch);
+
+
+        // Image Name Error
+
+            var imageNameError = @"../cireports/ImageValidation/ImageNameValidation.html";
+            var imageNameErrorString = FileReadText(imageNameError);
+            int imageNameErrorMatch = Regex.Matches(imageNameErrorString, "<tr><td style = 'border: 2px solid #416187;  color: #264c6b; padding:10px; border-collapse:collapse; border-bottom-width: 1px;'>").Count;
+            Information("There are {0} Image Name Errors exists", imageNameErrorMatch);
+	
 
 });
 
