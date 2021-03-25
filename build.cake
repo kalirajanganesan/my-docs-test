@@ -209,7 +209,9 @@ Task("PostComments")
 {
 	// Front matter Error	
 
-            String frontmatterErrorString = new File(@"../cireports/FrontMatterValidation/FrontMatterValidation.html").text;		
+            //String frontmatterErrorString = new File(@"../cireports/FrontMatterValidation/FrontMatterValidation.html").text;	
+	    string frontmatterError = @"../cireports/FrontMatterValidation/FrontMatterValidation.html";
+            string frontmatterErrorString = File.ReadAllText(frontmatterError);
             int frontmatterErrorMatch = Regex.Matches(frontmatterErrorString, "<tr><td style = 'border: 2px solid #416187;  color: #264c6b; padding:10px; border-collapse:collapse; border-bottom-width: 1px;'>").Count;
             Information("There are {0} errors exists", frontmatterErrorMatch);
 
