@@ -261,7 +261,16 @@ Task("PostComments")
             var filePathError = @"../cireports/FilePathValidation/FilePathValidation.html";
             var filePathErrorString = FileReadText(filePathError);
             int filePathErrorMatch = Regex.Matches(filePathErrorString, "<tr><td style = 'border: 2px solid #416187;  color: #264c6b;vertical-align:top; padding:10px; border-collapse:collapse; border-bottom-width: 1px;'>").Count;
-	    Information("There are {0} FilePath Validation Errors exists", filePathErrorMatch);
+	    Information("There are {0} File Path Errors exists", filePathErrorMatch);
+	
+	
+	// FT Layout Syntax Error
+
+            var fTLayoutSyntaxError = @"../cireports/FTLayoutSyntaxValidation/FTStructureValidation.html";
+            var fTLayoutSyntaxErrorString = FileReadText(fTLayoutSyntaxError);
+            int fTLayoutSyntaxErrorMatch = Regex.Matches(fTLayoutSyntaxErrorString, "<tr><td style = 'border: 2px solid #416187;  color: #264c6b; padding:10px; border-collapse:collapse; border-bottom-width: 1px;'>").Count;
+	    Information("There are {0} FT Layout Syntax Errors exists", fTLayoutSyntaxErrorMatch);
+            
 });
 
 //////////////////////////////////////////////////////////////////////
