@@ -2,6 +2,7 @@
 // ARGUMENTS
 //////////////////////////////////////////////////////////////////////
 #addin nuget:?package=Cake.FileHelpers
+#addin Cake.Curl
 #tool nuget:?package=Syncfusion.Spellcheck.CI
 using System.Text.RegularExpressions
 var target = Argument("target", "Default");
