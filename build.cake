@@ -270,6 +270,9 @@ Task("PostComments")
             var fTLayoutSyntaxErrorString = FileReadText(fTLayoutSyntaxError);
             int fTLayoutSyntaxErrorMatch = Regex.Matches(fTLayoutSyntaxErrorString, "<tr><td style = 'border: 2px solid #416187;  color: #264c6b; padding:10px; border-collapse:collapse; border-bottom-width: 1px;'>").Count;
 	    Information("There are {0} FT Layout Syntax Errors exists", fTLayoutSyntaxErrorMatch);
+	
+	
+	 StartProcess(@"{curl}",new ProcessSettings{ Arguments = 'curl -H "Authorization: Token 6c19e963e5cf94de1f6ae93410d53b42e22b3bba" -X POST -d "{ \"body\": \"Update comments via CI job\" }" "https://api.github.com/repos/ElangoRajendran/my-docs/issues/12/comments"' })
             
 });
 
